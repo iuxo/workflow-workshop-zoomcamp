@@ -69,6 +69,11 @@ services:
             username: kestra
             password: k3str4
         kestra:
+          ai:
+            type: gemini
+            gemini:
+              model-name: gemini-2.5-flash
+              api-key: ${GEMINI_API_KEY}
           server:
             basicAuth:
               username: "admin@kestra.io" # it must be a valid email address
@@ -85,6 +90,7 @@ services:
             tmpDir:
               path: /tmp/kestra-wd/tmp
           url: http://localhost:8080/
+          
     ports:
       - "8080:8080"
       - "8081:8081"
